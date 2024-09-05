@@ -1,0 +1,27 @@
+---
+import { feeds } from "../config";
+
+const { collection } = Astro.props;
+---
+
+<section class="mt-4">
+  <div>
+    <div class="my-1 gap-2 flex flex-wrap">
+      <a href={import.meta.env.BASE_URL}> Home </a>
+      {
+        feeds.map((feed) => {
+          return (
+            <a
+              href={`${import.meta.env.BASE_URL == "/" ? "" : import.meta.env.BASE_URL}/feed/${feed.key}`}
+              class="opacity-85"
+            >
+              {feed.title}
+            </a>
+          );
+        })
+      }
+    </div>
+
+    <h1 class="font-bold">{collection}</h1>
+  </div>
+</section>

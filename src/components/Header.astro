@@ -1,0 +1,58 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import DarkModeToggle from "./DarkModeToggle.astro";
+import { SITE_TITLE, SITE_DESCRIPTION,GITHUB_REPO } from "../config";
+---
+
+<header class="mb-20">
+  <!-- <a
+    class="unset absolute z-10 left-[50%] -top-[100rem] translate-x-[-50%] bg-white text-black px-8 py-2 focus:top-[initial]"
+    href="#main"
+  >
+    Skip to content
+  </a> -->
+
+  <nav>
+    <div class="mb-4">
+      <h1
+        class="font-extrabold text-3xl sm:text-5xl md:text-6xl tracking-tight pt-4 pb-2 overflow-hidden"
+      >
+        <span
+          class="bg-gradient-to-br from-[#fb923c] via-[#f97316] to-[#ea580c] dark:from-primary-main dark:via-primary-main dark:to-primary-main bg-clip-text text-transparent"
+        >
+          {SITE_TITLE}
+        </span>
+      </h1>
+    </div>
+    <div class="text-base sm:text-lg my-2">
+      {SITE_DESCRIPTION}
+    </div>
+  </nav>
+
+  <div
+    class="max-[375px]:hidden justify-self-end py-2 flex items-center content-center text-text-bold"
+  >
+    <a
+      class="unset text-xl ml-4 hover:text-text-link"
+      href={GITHUB_REPO}
+    >
+      <i
+        class="fa-brands fa-github"
+        aria-hidden="true"
+        title="rss-page on GitHub"></i>
+      <span class="fa-sr-only">rss-page on GitHub</span>
+    </a>
+  </div>
+  <DarkModeToggle />
+</header>
+<style>
+  header {
+    grid-area: header;
+    display: grid;
+    align-items: center;
+    grid-template-columns: minmax(0, 1fr) minmax(0, max-content) minmax(
+        0,
+        max-content
+      );
+  }
+</style>
