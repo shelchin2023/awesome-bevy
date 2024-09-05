@@ -25,7 +25,7 @@ const { entries, collection } = resp.data;
 <PageLayout>
   <PageMeta title={`${SITE_TITLE} `} slot="meta" />
   <Fragment slot="main">
-    <Intro collection={collection} />
+    <Intro collection={collection} id={id} />
     <section>
       <ul>
         {
@@ -40,26 +40,13 @@ const { entries, collection } = resp.data;
             return (
               <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
                 <div class="title">
-                  {post.external ? (
-                    <a
-                      href={post.url}
-                      target="_blank"
-                      class="unset hover:text-text-link"
-                    >
-                      <span>{post.title}</span>
-                      <span>
-                        <i class="ml-1 mr-1 text-[12px] pb-2 fa-solid fa-up-right-from-square pt-1" />
-                      </span>
-                    </a>
-                  ) : (
-                    <a
-                      href={post.link}
-                      target="_blank"
-                      class="unset hover:text-text-link"
-                    >
-                      {post.title}
-                    </a>
-                  )}
+                  <a
+                    href={post.link}
+                    target="_blank"
+                    class="unset hover:text-text-link"
+                  >
+                    {post.title}
+                  </a>
                 </div>
                 <div class="text-text-muted text-sm italic">
                   <time datetime={dayjs(post.updatedAt).toISOString()}>

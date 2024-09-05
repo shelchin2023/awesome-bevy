@@ -4,7 +4,7 @@ export const GITHUB_REPO = "https://github.com/shelchin2023/awesome-bevy";
 // Edit RSS sources
 export const feeds = [
   {
-    "title": "CoinDesk",
-    "key": "coindesk",
+    "title": "Games",
+    "key": "games",
   },
 ];
